@@ -1,3 +1,4 @@
+# from ctypes import cast
 import constants
 from game.casting.actor import Actor
 from game.scripting.action import Action
@@ -84,3 +85,4 @@ class HandleCollisionsAction(Action):
             for segment in segments:
                 segment.set_color(constants.WHITE)
             food.set_color(constants.WHITE)
+            constants.GAME_OVER = True 

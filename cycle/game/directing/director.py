@@ -1,3 +1,5 @@
+import constants
+from game.casting.actor import Actor
 class Director:
     """A person who directs the game. 
     
@@ -37,6 +39,14 @@ class Director:
             cast (Cast): The cast of actors.
             script (Script): The script of actions.
         """
+        snake = cast.get_first_actor("snakes")
+        snake2 = cast.get_second_actor("snakes")
         actions = script.get_actions(group)    
         for action in actions:
-            action.execute(cast, script)          
+            action.execute(cast, script) 
+        if not constants.GAME_OVER:
+            snake.grow_tail(1, constants.GREEN)
+            snake2.grow_tail(1, constants.RED)
+        # NUMBER_OF_FRAMES +=1
+        # if NUMBER_OF_FRAMES == 45:
+        #         NUMBER_OF_FRAMES = 0         
