@@ -1,3 +1,4 @@
+from game.shared.point import Point
 from game.casting.actor import Actor
 
 
@@ -12,10 +13,11 @@ class Score(Actor):
     Attributes:
         _points (int): The points earned in the game.
     """
-    def __init__(self):
+    def __init__(self,x,y):
         super().__init__()
         self._points = 0
         self.add_points(0)
+        self._position = Point(x,y)
 
     def add_points(self, points):
         """Adds the given points to the score's total points.

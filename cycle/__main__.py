@@ -21,9 +21,10 @@ def main():
     # create the cast
     cast = Cast()
     cast.add_actor("foods", Food())
-    cast.add_actor("snakes", Snake())
-    cast.add_actor("snakes", Snake())
-    cast.add_actor("scores", Score())
+    cast.add_actor("snakes", Snake(600, int(constants.MAX_Y / 2)))
+    cast.add_actor("snakes", Snake(300, int(constants.MAX_Y / 2)))
+    cast.add_actor("scores", Score(0, 0))
+    cast.add_actor("scores", Score(800, 0))
    
     # start the game
     keyboard_service = KeyboardService()
